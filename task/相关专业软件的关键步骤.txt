@@ -1,0 +1,5 @@
+1.读取input_data中的组件目录、站点角色和本地子Chart，并核对baseline/starter的现状
+2.在根Chart声明本地依赖，按组件目录整理values、values.schema.json和各站点values
+3.运行helm dependency build生成离线依赖包和Chart.lock
+4.对每份站点values运行helm lint和helm template，把清单写入output/rendered
+5.从渲染清单提取Deployment、Service、镜像和端口，生成site_handoff.csv并回查组件目录

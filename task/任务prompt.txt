@@ -1,0 +1,5 @@
+新建港口边缘站即将入场，现场无法访问公网镜像或Chart仓库。平台组需要把现有单体发布包整理成可离线交接的Helm包，供现场值班按站点角色准备部署清单。
+
+材料都在input_data。component_catalog.json记录允许使用的镜像摘要和端口，profile_contract.json记录站点角色，vendor_sources提供本地子Chart，baseline/starter是当前版本。请根据这些材料核对现状，建立本地依赖，填入组件值，并整理各站点的values。处理期间不访问外部仓库或Kubernetes集群。
+
+使用Helm完成依赖构建、lint和template。交付output/chart/harbor-edge-stack、output/rendered和output/reports/site_handoff.csv。离线包应能从本地子Chart重新建立依赖；每个站点只渲染该角色启用的组件，镜像和端口与组件目录一致；交接表列出站点、组件、工作负载、服务、镜像和服务端口。

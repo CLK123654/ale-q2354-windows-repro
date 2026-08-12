@@ -1,0 +1,5 @@
+支持的操作系统包括Windows11，主软件为Helm3.18.4，使用原生Windows版本和PowerShell7。Helm需要实际完成dependency build、lint和template，普通YAML拼接不能替代这些操作。
+
+辅助工具为Python3.12、UTF-8文本编辑器和CSV查看器，不需要第三方Python包。软件安装阶段需要联网，开始处理输入后不访问外部仓库、OCI registry或Kubernetes集群。Helm按Apache License2.0使用，输入材料为自造脱敏配置，可公开处理。
+
+建议准备2核CPU、2GB可用内存和500MB可写磁盘，不需要GPU。输入权限为读取input_data，输出权限为在交付目录创建文件和子目录。单次依赖构建和三类站点渲染应在5分钟内完成。现场风险主要是本地依赖未随介质交付、镜像摘要被可变标签替代，以及站点角色启用范围与交接表不一致。
